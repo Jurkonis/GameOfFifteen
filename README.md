@@ -1,1 +1,2 @@
-"# GameOfFifteen" 
+App development project:
+GameOfFifteen
