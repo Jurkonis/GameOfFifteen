@@ -2,6 +2,7 @@ package edu.ktu.gameoffifteen;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.GridView;
 
 import java.util.ArrayList;

@@ -35,10 +35,16 @@ public class GridViewAdapter extends ArrayAdapter<String> {
             v = inflater.inflate(R.layout.design, null);
         }
         final Button button = (Button) v.findViewById(R.id.button);
+        if(emptyButtonPosition==position)
+        {
+            button.setBackgroundResource(R.drawable.ic_android_black_24dp);
+            button.setText("");
+        }
+        else{
         button.setText(objects.get(position));
         button.setBackgroundColor(Color.DKGRAY);
         button.setTextColor(Color.YELLOW);
-        button.setTextSize(30);
+        button.setTextSize(30);}
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
