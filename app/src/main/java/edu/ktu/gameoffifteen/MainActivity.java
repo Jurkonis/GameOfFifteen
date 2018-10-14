@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             temp = array[index];
             array[index] = array[i];
             array[i] = temp;
-            if (temp == "")
+            if (temp.equals(""))
                 emptyButtonPosition = i;
         }
     }

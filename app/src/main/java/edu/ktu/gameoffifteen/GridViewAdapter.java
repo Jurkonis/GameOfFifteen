@@ -35,8 +35,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
             v = inflater.inflate(R.layout.design, null);
         }
         final Button button = (Button) v.findViewById(R.id.button);
-        if(emptyButtonPosition==position)
-        {
+        if(emptyButtonPosition==position) {
             button.setBackgroundResource(R.drawable.ic_android_black_24dp);
             button.setText("");
         }
@@ -59,7 +58,8 @@ public class GridViewAdapter extends ArrayAdapter<String> {
                     emptyButtonPosition = position;
                     notifyDataSetChanged();
                 }
-                //Toast.makeText(context,"Position: "+String.valueOf(position)+" "+"Empty position: "+String.valueOf(emptyButtonPosition),Toast.LENGTH_SHORT).show();
+                // Toast.makeText(context,"Position: "+String.valueOf(position)+" "+"Empty position: "
+                //        +String.valueOf(emptyButtonPosition),Toast.LENGTH_SHORT).show();
             }
         });
         return v;
