@@ -19,6 +19,8 @@ public class GridViewAdapter extends ArrayAdapter<String> {
     int down;
     int left;
     int right;
+    String[] array1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", ""};
+    String[] array2={"","15","14","13","12","11","10","9","8","7","6","5","4","3","2","1"};
 
     public GridViewAdapter(Context context, List<String> objects, int emptyButtonPosition) {
         super(context, R.layout.design, objects);
@@ -49,8 +51,14 @@ public class GridViewAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 up = position + 4;
                 down = position - 4;
+                if(position!=0&&position!=4&& position!=8&&position!=12)
                 left = position - 1;
+            else
+            	left = position;
+           		if(position!=3&& position!=7&&position!=11&&position!=15)
                 right = position + 1;
+            else
+            	right = position;
                 if (emptyButtonPosition == up || emptyButtonPosition == down || emptyButtonPosition == left || emptyButtonPosition == right) {
                     String temp = button.getText().toString();
                     objects.set(emptyButtonPosition, temp);
