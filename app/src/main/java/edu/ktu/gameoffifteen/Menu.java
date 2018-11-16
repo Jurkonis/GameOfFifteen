@@ -18,7 +18,6 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         play=(Button) findViewById(R.id.play);
-        play.setText("Play");
         play.setOnClickListener(startGame);
     }
 

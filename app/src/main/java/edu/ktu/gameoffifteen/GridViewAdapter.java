@@ -23,7 +23,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
     String[] array2={"","15","14","13","12","11","10","9","8","7","6","5","4","3","2","1"};
 
     public GridViewAdapter(Context context, List<String> objects, int emptyButtonPosition) {
-        super(context, R.layout.design, objects);
+        super(context, R.layout.button, objects);
         this.objects = objects;
         this.context = context;
         this.emptyButtonPosition = emptyButtonPosition;
@@ -34,7 +34,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
         View v = convertView;
         if (v == null) {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.design, null);
+            v = inflater.inflate(R.layout.button, null);
         }
         final Button button = (Button) v.findViewById(R.id.button);
         if(emptyButtonPosition==position) {
@@ -66,8 +66,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
                     emptyButtonPosition = position;
                     notifyDataSetChanged();
                 }
-                // Toast.makeText(context,"Position: "+String.valueOf(position)+" "+"Empty position: "
-                //        +String.valueOf(emptyButtonPosition),Toast.LENGTH_SHORT).show();
+                 //Toast.makeText(context,"Position: "+String.valueOf(position)+" "+"Empty position: "+String.valueOf(emptyButtonPosition),Toast.LENGTH_SHORT).show();
             }
         });
         return v;

@@ -11,9 +11,28 @@
         android:id="@+id/play"
         android:layout_width="150dp"
         android:layout_height="75dp"
+        android:layout_gravity="center"
         android:background="#ff5b0f"
+        android:text="Play"
         android:textColor="#1e1c1c"
-        android:textSize="35dp"
-        android:layout_gravity="center"/>
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="70dp">
+
+        <Button
+        android:id="@+id/scoreboard"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:background="#ff5b0f"
+        android:text="scoreboard"
+        android:textColor="#1e1c1c"
+        android:textSize="20dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

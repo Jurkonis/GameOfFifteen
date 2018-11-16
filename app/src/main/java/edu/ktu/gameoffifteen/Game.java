@@ -6,8 +6,11 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,32 +30,24 @@ public class Game extends AppCompatActivity {
     private TextView timer;
     private GridView gridView;
     private int counter=0;
-    private boolean timeRunning;
+    private Button reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
+        reset =(Button) findViewById(R.id.reset);
         scramble();
         setUpList();
         gridView = (GridView) findViewById(R.id.gridView);
         timer = (TextView) findViewById(R.id.timer);
         adapter = new GridViewAdapter(this, buttons, emptyButtonPosition);
-        for (int i = 0; i < array.length; i++)
-            if (array1[i] == buttons.get(i))
-                count++;
-        if (count == 16)
-            runGame();
-        count = 0;
-        for (int i = 0; i < array.length; i++)
-            if (array2[i] == buttons.get(i))
-                count++;
-        if (count == 16)
-            runGame();
+        reset.setOnClickListener(resetGame);
         gridView.setAdapter(adapter);
         startTimer();
     }
+
 
     private void scramble() {
         int index;
@@ -73,16 +68,15 @@ public class Game extends AppCompatActivity {
         for (String item : array)
             buttons.add(item);
     }
-
-    public void runGame() {
-        Intent intent = new Intent(context, Menu.class);
+    public void reset() {
+        Intent intent = new Intent(context, Game.class);
         context.startActivity(intent);
     }
 
-    View.OnClickListener startGame = new View.OnClickListener() {
+    View.OnClickListener resetGame = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            runGame();
+            reset();
         }
     };
 
@@ -91,9 +85,10 @@ public class Game extends AppCompatActivity {
         countDownTimer=new CountDownTimer(600000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                //timer.setText(String.valueOf(counter));
-                updateTimer();
-                counter++;
+                if(!isSolved()) {
+                    updateTimer();
+                    counter++;
+                }
             }
 
             @Override
@@ -115,5 +110,17 @@ public class Game extends AppCompatActivity {
         timeLeftText+=seconds;
 
         timer.setText(timeLeftText);
+    }
+
+    public boolean isSolved()
+    {
+        boolean solved=false;
+        for(int i=0;i<16;i++) {
+            if (array1[i].equals(String.valueOf(buttons.get(i)))||array2[i].equals(String.valueOf(buttons.get(i))))
+                solved = true;
+            else
+                solved = false;
+        }
+        return solved;
     }
 }
