@@ -75,6 +75,7 @@ public class Game extends AppCompatActivity {
     View.OnClickListener resetGame = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            countDownTimer.cancel();
             reset();
         }
     };
@@ -114,7 +115,6 @@ public class Game extends AppCompatActivity {
     }
 
     public boolean isSolved() {
-        boolean solved = false;
         int k = 0;
         for (int i = 0; i < 16; i++) {
             if (array1[i].equals(String.valueOf(buttons.get(i))))

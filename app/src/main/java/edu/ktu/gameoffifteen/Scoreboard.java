@@ -16,7 +16,7 @@ public class Scoreboard extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scoredesign);
+        setContentView(R.layout.scoreboarddesign);
         List<ListItem> items = new ArrayList<>();
         myList = (ListView) findViewById(R.id.scoreList);
         int in = R.drawable.ic_arrow_downward_black_24dp;
