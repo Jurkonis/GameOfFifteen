@@ -42,7 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="Submit"
-        android:background="#ff5b0f"
+        android:background="@drawable/mybutton"
         android:textSize="20dp"/>
 
 </RelativeLayout>

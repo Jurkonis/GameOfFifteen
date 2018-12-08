@@ -22,7 +22,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
     String[] array2={"","15","14","13","12","11","10","9","8","7","6","5","4","3","2","1"};
 
     public GridViewAdapter(Context context, List<String> objects, int emptyButtonPosition) {
-        super(context, R.layout.buttondesign, objects);
+        super(context, R.layout.gridbuttondesign, objects);
         this.objects = objects;
         this.context = context;
         this.emptyButtonPosition = emptyButtonPosition;
@@ -33,11 +33,11 @@ public class GridViewAdapter extends ArrayAdapter<String> {
         View v = convertView;
         if (v == null) {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.buttondesign, null);
+            v = inflater.inflate(R.layout.gridbuttondesign, null);
         }
         final Button button = (Button) v.findViewById(R.id.button);
         if(emptyButtonPosition==position) {
-            button.setBackgroundResource(R.drawable.ic_android_black_24dp);
+            button.setBackgroundColor(Color.BLACK);
             button.setText("");
         }
         else{

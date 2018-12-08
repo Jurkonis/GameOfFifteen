@@ -30,21 +30,13 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
 
         TextView name=(TextView) v.findViewById(R.id.nameInScores);
         TextView time=(TextView)v.findViewById(R.id.timeInScores);
-        ImageView image =(ImageView)v.findViewById(R.id.image);
+        //ImageView image =(ImageView)v.findViewById(R.id.image);
 
         ListItem item=getItem(position);
 
         name.setText(item.getName());
         time.setText(item.getTime());
-        image.setImageResource(item.getImageID());
-
-        image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                obejcts.remove(position);
-                notifyDataSetChanged();
-            }
-        });
+        //image.setImageResource(item.getImageID());
         return v;
     }
 }

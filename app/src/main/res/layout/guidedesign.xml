@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="265dp">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@mipmap/ic_launcher_foreground"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="To solve the puzzle:"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Begin by arranging from left to right, the first section (red) so that it matches the solution."
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Repeat step one, however, with the second section (green)."
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Correctly arrange the two tiles located in the fourth section (yellow)."
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Repeat the process as in step three, however for the fifth section (orange)."
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Lastly, arrange the last four tiles in the fifth section (blue)."
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15dp"
+            android:textColor="#000000"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note: "
+                android:layout_marginLeft="15dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:textSize="15dp"
+                android:text="After a step is completed, DO NOT re-arrange any tiles in the previous step; just work with what you have."
+                android:textColor="#000000"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

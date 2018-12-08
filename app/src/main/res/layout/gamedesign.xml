@@ -25,11 +25,5 @@
             android:horizontalSpacing="2dp"
             android:numColumns="4"
             android:verticalSpacing="2dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/reset"
-        android:text="reset"
-        />
 
 </RelativeLayout>

@@ -30,21 +30,23 @@ public class Game extends AppCompatActivity {
     private int counter =0;
     private Button reset;
     private String timeLeftText;
+    private Intent mIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamedesign);
 
-        reset = (Button) findViewById(R.id.reset);
-        scramble();
+        //scramble();
         setUpList();
         gridView = (GridView) findViewById(R.id.gridView);
         timer = (TextView) findViewById(R.id.timer);
         adapter = new GridViewAdapter(this, buttons, emptyButtonPosition);
-        reset.setOnClickListener(resetGame);
+        //reset = (Button) findViewById(R.id.reset);
+        //reset.setOnClickListener(resetGame);
         gridView.setAdapter(adapter);
         startTimer();
+        mIntent=getIntent();
     }
 
     private void scramble() {
@@ -69,6 +71,7 @@ public class Game extends AppCompatActivity {
 
     public void reset() {
         Intent intent = new Intent(context, Game.class);
+        intent.putExtras(mIntent);
         context.startActivity(intent);
     }
 
@@ -91,6 +94,7 @@ public class Game extends AppCompatActivity {
                     countDownTimer.cancel();
                     Intent intent = new Intent(context, WonScreen.class);
                     intent.putExtra("time", timeLeftText);
+                   // intent.putExtras(mIntent);
                     context.startActivity(intent);
                 }
             }
@@ -122,7 +126,7 @@ public class Game extends AppCompatActivity {
             else
                 k=0;
         }
-        if (k == 16)
+        if (k == 17)
             return true;
         else
             return false;

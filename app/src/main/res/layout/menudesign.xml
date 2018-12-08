@@ -5,34 +5,41 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="100dp">
+    android:paddingTop="75dp">
 
     <Button
         android:id="@+id/play"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
-        android:background="#ff5b0f"
+        android:background="@drawable/mybutton"
         android:text="Play"
         android:textColor="#1e1c1c"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="70dp">
 
         <Button
-        android:id="@+id/scoreboard"
+            android:id="@+id/scoreboard"
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:background="@drawable/mybutton"
+            android:text="scoreboard"
+            android:textColor="#1e1c1c"
+            android:textSize="22dp"
+            android:layout_marginTop="55dp"/>
+
+    <Button
+        android:id="@+id/guide"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
-        android:background="#ff5b0f"
-        android:text="scoreboard"
+        android:background="@drawable/mybutton"
+        android:text="Guide"
         android:textColor="#1e1c1c"
-        android:textSize="20dp" />
+        android:textSize="30dp"
+        android:layout_marginTop="55dp"/>
 
-    </LinearLayout>
 
 </LinearLayout>
