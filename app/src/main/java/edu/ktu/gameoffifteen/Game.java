@@ -37,7 +37,7 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamedesign);
 
-        //scramble();
+        scramble();
         setUpList();
         gridView = (GridView) findViewById(R.id.gridView);
         timer = (TextView) findViewById(R.id.timer);
